@@ -1,0 +1,647 @@
+Requirement already satisfied: compressai in /home/egb11/.local/lib/python3.10/site-packages (1.2.8)
+Requirement already satisfied: einops in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (0.8.2)
+Requirement already satisfied: matplotlib in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (3.7.2)
+Requirement already satisfied: numpy<2.0,>=1.21.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (1.24.3)
+Requirement already satisfied: pandas in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (2.0.3)
+Requirement already satisfied: pybind11>=2.6.0 in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (3.0.2)
+Requirement already satisfied: pytorch-msssim in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (1.0.0)
+Requirement already satisfied: scipy in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (1.11.1)
+Requirement already satisfied: setuptools>=68 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (68.0.0)
+Requirement already satisfied: tomli>=2.2.1 in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (2.4.0)
+Requirement already satisfied: torch-geometric>=2.3.0 in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (2.7.0)
+Requirement already satisfied: torch>=1.13.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (2.1.2)
+Requirement already satisfied: torchvision in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (0.16.2)
+Requirement already satisfied: tqdm in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (4.65.0)
+Requirement already satisfied: typing-extensions>=4.0.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (4.15.0)
+Requirement already satisfied: wheel>=0.32.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (0.38.4)
+Requirement already satisfied: filelock in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (3.9.0)
+Requirement already satisfied: sympy in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (1.11.1)
+Requirement already satisfied: networkx in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (3.1)
+Requirement already satisfied: jinja2 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (3.1.2)
+Requirement already satisfied: fsspec in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (2025.3.0)
+Requirement already satisfied: aiohttp in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (3.8.5)
+Requirement already satisfied: psutil>=5.8.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (5.9.0)
+Requirement already satisfied: pyparsing in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (3.0.9)
+Requirement already satisfied: requests in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (2.31.0)
+Requirement already satisfied: xxhash in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (2.0.2)
+Requirement already satisfied: attrs>=17.3.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (22.1.0)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (2.0.4)
+Requirement already satisfied: multidict<7.0,>=4.5 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (6.0.2)
+Requirement already satisfied: async-timeout<5.0,>=4.0.0a3 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (4.0.2)
+Requirement already satisfied: yarl<2.0,>=1.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (1.8.1)
+Requirement already satisfied: frozenlist>=1.1.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (1.3.3)
+Requirement already satisfied: aiosignal>=1.1.2 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (1.2.0)
+Requirement already satisfied: idna>=2.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from yarl<2.0,>=1.0->aiohttp->torch-geometric>=2.3.0->compressai) (3.4)
+Requirement already satisfied: MarkupSafe>=2.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from jinja2->torch>=1.13.1->compressai) (2.1.1)
+Requirement already satisfied: contourpy>=1.0.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (1.0.5)
+Requirement already satisfied: cycler>=0.10 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (0.11.0)
+Requirement already satisfied: fonttools>=4.22.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (4.25.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (1.4.4)
+Requirement already satisfied: packaging>=20.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (23.1)
+Requirement already satisfied: pillow>=6.2.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (9.4.0)
+Requirement already satisfied: python-dateutil>=2.7 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (2.8.2)
+Requirement already satisfied: six>=1.5 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib->compressai) (1.16.0)
+Requirement already satisfied: pytz>=2020.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from pandas->compressai) (2023.3.post1)
+Requirement already satisfied: tzdata>=2022.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from pandas->compressai) (2023.3)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from requests->torch-geometric>=2.3.0->compressai) (1.26.16)
+Requirement already satisfied: certifi>=2017.4.17 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from requests->torch-geometric>=2.3.0->compressai) (2023.11.17)
+Requirement already satisfied: mpmath>=0.19 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from sympy->torch>=1.13.1->compressai) (1.3.0)
+
+[notice] A new release of pip is available: 25.1.1 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+Compression Focus: Loaded 10000 images (Offset: 20000)
+Resuming from Epoch 19: ./checkpoints/student_epoch_15_imgs_60000.pth
+
+--- Epoch 16 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 1.7011 | BPP: 0.7759 | MSE: 0.00043
+Step [20/1250] | Loss: 1.9928 | BPP: 0.6650 | MSE: 0.00035
+Step [40/1250] | Loss: 1.3601 | BPP: 0.6389 | MSE: 0.00054
+Step [60/1250] | Loss: 1.6600 | BPP: 0.6299 | MSE: 0.00102
+Step [80/1250] | Loss: 1.7572 | BPP: 0.5282 | MSE: 0.00076
+Step [100/1250] | Loss: 1.5896 | BPP: 0.4628 | MSE: 0.00063
+Step [120/1250] | Loss: 1.5259 | BPP: 0.4126 | MSE: 0.00073
+Step [140/1250] | Loss: 1.4200 | BPP: 0.4128 | MSE: 0.00080
+Step [160/1250] | Loss: 1.2687 | BPP: 0.4028 | MSE: 0.00113
+Step [180/1250] | Loss: 1.2359 | BPP: 0.3574 | MSE: 0.00078
+Step [200/1250] | Loss: 1.0887 | BPP: 0.3177 | MSE: 0.00099
+Step [220/1250] | Loss: 1.2288 | BPP: 0.3435 | MSE: 0.00131
+Step [240/1250] | Loss: 1.2860 | BPP: 0.3196 | MSE: 0.00193
+Step [260/1250] | Loss: 1.0369 | BPP: 0.2869 | MSE: 0.00086
+Step [280/1250] | Loss: 1.2834 | BPP: 0.2684 | MSE: 0.00094
+Step [300/1250] | Loss: 1.2911 | BPP: 0.2706 | MSE: 0.00095
+Step [320/1250] | Loss: 1.0249 | BPP: 0.2648 | MSE: 0.00135
+Step [340/1250] | Loss: 1.4047 | BPP: 0.2475 | MSE: 0.00092
+Step [360/1250] | Loss: 1.4099 | BPP: 0.2467 | MSE: 0.00101
+Step [380/1250] | Loss: 1.1644 | BPP: 0.2715 | MSE: 0.00138
+Step [400/1250] | Loss: 1.4724 | BPP: 0.2444 | MSE: 0.00108
+Step [420/1250] | Loss: 1.3697 | BPP: 0.2412 | MSE: 0.00107
+Step [440/1250] | Loss: 1.0129 | BPP: 0.2647 | MSE: 0.00158
+Step [460/1250] | Loss: 1.3406 | BPP: 0.2130 | MSE: 0.00150
+Step [480/1250] | Loss: 1.2606 | BPP: 0.2356 | MSE: 0.00144
+Step [500/1250] | Loss: 1.0205 | BPP: 0.2296 | MSE: 0.00153
+Step [520/1250] | Loss: 0.8989 | BPP: 0.2186 | MSE: 0.00122
+Step [540/1250] | Loss: 1.1914 | BPP: 0.2356 | MSE: 0.00142
+Step [560/1250] | Loss: 1.0178 | BPP: 0.1846 | MSE: 0.00095
+Step [580/1250] | Loss: 1.4907 | BPP: 0.2395 | MSE: 0.00140
+Step [600/1250] | Loss: 1.2480 | BPP: 0.2073 | MSE: 0.00113
+Step [620/1250] | Loss: 1.4333 | BPP: 0.2285 | MSE: 0.00150
+Step [640/1250] | Loss: 1.1448 | BPP: 0.2093 | MSE: 0.00111
+Step [660/1250] | Loss: 1.5478 | BPP: 0.2462 | MSE: 0.00181
+Step [680/1250] | Loss: 1.1517 | BPP: 0.2094 | MSE: 0.00117
+Step [700/1250] | Loss: 0.9824 | BPP: 0.2224 | MSE: 0.00144
+Step [720/1250] | Loss: 0.9915 | BPP: 0.2215 | MSE: 0.00175
+Step [740/1250] | Loss: 0.9971 | BPP: 0.2172 | MSE: 0.00157
+Step [760/1250] | Loss: 1.1142 | BPP: 0.2243 | MSE: 0.00142
+Step [780/1250] | Loss: 1.0216 | BPP: 0.2376 | MSE: 0.00167
+Step [800/1250] | Loss: 1.1167 | BPP: 0.2441 | MSE: 0.00167
+Step [820/1250] | Loss: 0.8307 | BPP: 0.1870 | MSE: 0.00075
+Step [840/1250] | Loss: 0.8926 | BPP: 0.2694 | MSE: 0.00225
+Step [860/1250] | Loss: 0.9466 | BPP: 0.2459 | MSE: 0.00131
+Step [880/1250] | Loss: 1.3532 | BPP: 0.2753 | MSE: 0.00306
+Step [900/1250] | Loss: 0.7620 | BPP: 0.2746 | MSE: 0.00143
+Step [920/1250] | Loss: 0.9922 | BPP: 0.2653 | MSE: 0.00155
+Step [940/1250] | Loss: 1.0323 | BPP: 0.2787 | MSE: 0.00225
+Step [960/1250] | Loss: 0.7521 | BPP: 0.2614 | MSE: 0.00135
+Step [980/1250] | Loss: 0.8824 | BPP: 0.2936 | MSE: 0.00352
+Step [1000/1250] | Loss: 0.6225 | BPP: 0.2481 | MSE: 0.00100
+Step [1020/1250] | Loss: 0.6734 | BPP: 0.2713 | MSE: 0.00155
+Step [1040/1250] | Loss: 0.7272 | BPP: 0.2745 | MSE: 0.00143
+Step [1060/1250] | Loss: 0.7909 | BPP: 0.2913 | MSE: 0.00205
+Step [1080/1250] | Loss: 0.6631 | BPP: 0.2565 | MSE: 0.00143
+Step [1100/1250] | Loss: 0.7722 | BPP: 0.2919 | MSE: 0.00198
+Step [1120/1250] | Loss: 0.5503 | BPP: 0.2468 | MSE: 0.00145
+Step [1140/1250] | Loss: 0.6440 | BPP: 0.2688 | MSE: 0.00123
+Step [1160/1250] | Loss: 0.4771 | BPP: 0.2326 | MSE: 0.00126
+Step [1180/1250] | Loss: 0.5461 | BPP: 0.2395 | MSE: 0.00123
+Step [1200/1250] | Loss: 0.7166 | BPP: 0.2787 | MSE: 0.00240
+Step [1220/1250] | Loss: 0.5757 | BPP: 0.2492 | MSE: 0.00162
+Step [1240/1250] | Loss: 0.6944 | BPP: 0.2693 | MSE: 0.00182
+Saved: ./checkpoints/student_epoch_16_sub_route_compression_focus.pth
+
+--- Epoch 17 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 0.8001 | BPP: 0.2715 | MSE: 0.00304
+Step [20/1250] | Loss: 0.5409 | BPP: 0.2449 | MSE: 0.00178
+Step [40/1250] | Loss: 0.5843 | BPP: 0.2462 | MSE: 0.00184
+Step [60/1250] | Loss: 0.8480 | BPP: 0.2750 | MSE: 0.00248
+Step [80/1250] | Loss: 0.5132 | BPP: 0.2432 | MSE: 0.00122
+Step [100/1250] | Loss: 0.5255 | BPP: 0.2457 | MSE: 0.00129
+Step [120/1250] | Loss: 0.5129 | BPP: 0.2453 | MSE: 0.00149
+Step [140/1250] | Loss: 0.7212 | BPP: 0.2805 | MSE: 0.00272
+Step [160/1250] | Loss: 0.6174 | BPP: 0.2726 | MSE: 0.00155
+Step [180/1250] | Loss: 0.4468 | BPP: 0.2313 | MSE: 0.00107
+Step [200/1250] | Loss: 0.5126 | BPP: 0.2366 | MSE: 0.00139
+Step [220/1250] | Loss: 0.5266 | BPP: 0.2511 | MSE: 0.00139
+Step [240/1250] | Loss: 0.5860 | BPP: 0.2431 | MSE: 0.00147
+Step [260/1250] | Loss: 0.5380 | BPP: 0.2397 | MSE: 0.00143
+Step [280/1250] | Loss: 0.4590 | BPP: 0.2347 | MSE: 0.00106
+Step [300/1250] | Loss: 0.5926 | BPP: 0.2472 | MSE: 0.00233
+Step [320/1250] | Loss: 0.4841 | BPP: 0.2304 | MSE: 0.00156
+Step [340/1250] | Loss: 0.5597 | BPP: 0.2387 | MSE: 0.00190
+Step [360/1250] | Loss: 0.5424 | BPP: 0.2361 | MSE: 0.00129
+Step [380/1250] | Loss: 0.5362 | BPP: 0.2344 | MSE: 0.00141
+Step [400/1250] | Loss: 0.5127 | BPP: 0.2427 | MSE: 0.00180
+Step [420/1250] | Loss: 0.4194 | BPP: 0.2233 | MSE: 0.00105
+Step [440/1250] | Loss: 0.6373 | BPP: 0.2582 | MSE: 0.00195
+Step [460/1250] | Loss: 0.4676 | BPP: 0.2170 | MSE: 0.00107
+Step [480/1250] | Loss: 0.4556 | BPP: 0.2258 | MSE: 0.00102
+Step [500/1250] | Loss: 0.5976 | BPP: 0.2389 | MSE: 0.00175
+Step [520/1250] | Loss: 0.5303 | BPP: 0.2400 | MSE: 0.00169
+Step [540/1250] | Loss: 0.5062 | BPP: 0.2391 | MSE: 0.00146
+Step [560/1250] | Loss: 0.4719 | BPP: 0.2257 | MSE: 0.00101
+Step [580/1250] | Loss: 0.4661 | BPP: 0.2205 | MSE: 0.00115
+Step [600/1250] | Loss: 0.5310 | BPP: 0.2180 | MSE: 0.00180
+Step [620/1250] | Loss: 0.4187 | BPP: 0.2179 | MSE: 0.00109
+Step [640/1250] | Loss: 0.5035 | BPP: 0.2341 | MSE: 0.00121
+Step [660/1250] | Loss: 0.4976 | BPP: 0.2274 | MSE: 0.00116
+Step [680/1250] | Loss: 0.3944 | BPP: 0.2068 | MSE: 0.00088
+Step [700/1250] | Loss: 0.5399 | BPP: 0.2328 | MSE: 0.00135
+Step [720/1250] | Loss: 0.5266 | BPP: 0.2260 | MSE: 0.00175
+Step [740/1250] | Loss: 0.4553 | BPP: 0.2177 | MSE: 0.00110
+Step [760/1250] | Loss: 0.4904 | BPP: 0.2213 | MSE: 0.00157
+Step [780/1250] | Loss: 0.4940 | BPP: 0.2243 | MSE: 0.00134
+Step [800/1250] | Loss: 0.4018 | BPP: 0.2082 | MSE: 0.00097
+Step [820/1250] | Loss: 0.4634 | BPP: 0.2192 | MSE: 0.00132
+Step [840/1250] | Loss: 0.4729 | BPP: 0.2195 | MSE: 0.00147
+Step [860/1250] | Loss: 0.4769 | BPP: 0.2144 | MSE: 0.00126
+Step [880/1250] | Loss: 0.4582 | BPP: 0.2170 | MSE: 0.00138
+Step [900/1250] | Loss: 0.4321 | BPP: 0.2081 | MSE: 0.00110
+Step [920/1250] | Loss: 0.4716 | BPP: 0.2200 | MSE: 0.00132
+Step [940/1250] | Loss: 0.4827 | BPP: 0.2176 | MSE: 0.00150
+Step [960/1250] | Loss: 0.4281 | BPP: 0.2090 | MSE: 0.00101
+Step [980/1250] | Loss: 0.4959 | BPP: 0.2202 | MSE: 0.00141
+Step [1000/1250] | Loss: 0.4028 | BPP: 0.2069 | MSE: 0.00109
+Step [1020/1250] | Loss: 0.3703 | BPP: 0.1934 | MSE: 0.00100
+Step [1040/1250] | Loss: 0.4608 | BPP: 0.2156 | MSE: 0.00114
+Step [1060/1250] | Loss: 0.3499 | BPP: 0.1954 | MSE: 0.00073
+Step [1080/1250] | Loss: 0.5217 | BPP: 0.2267 | MSE: 0.00109
+Step [1100/1250] | Loss: 0.5143 | BPP: 0.2233 | MSE: 0.00183
+Step [1120/1250] | Loss: 0.4323 | BPP: 0.2097 | MSE: 0.00112
+Step [1140/1250] | Loss: 0.4366 | BPP: 0.2101 | MSE: 0.00125
+Step [1160/1250] | Loss: 0.4222 | BPP: 0.2117 | MSE: 0.00111
+Step [1180/1250] | Loss: 0.3860 | BPP: 0.2019 | MSE: 0.00083
+Step [1200/1250] | Loss: 0.3965 | BPP: 0.2006 | MSE: 0.00086
+Step [1220/1250] | Loss: 0.4348 | BPP: 0.2023 | MSE: 0.00108
+Step [1240/1250] | Loss: 0.4533 | BPP: 0.2174 | MSE: 0.00122
+Saved: ./checkpoints/student_epoch_17_sub_route_compression_focus.pth
+
+--- Epoch 18 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 0.4239 | BPP: 0.2098 | MSE: 0.00110
+Step [20/1250] | Loss: 0.4792 | BPP: 0.2173 | MSE: 0.00159
+Step [40/1250] | Loss: 0.3680 | BPP: 0.1933 | MSE: 0.00077
+Step [60/1250] | Loss: 0.4462 | BPP: 0.2063 | MSE: 0.00116
+Step [80/1250] | Loss: 0.5472 | BPP: 0.2258 | MSE: 0.00219
+Step [100/1250] | Loss: 0.4584 | BPP: 0.2038 | MSE: 0.00153
+Step [120/1250] | Loss: 0.4346 | BPP: 0.2146 | MSE: 0.00106
+Step [140/1250] | Loss: 0.4197 | BPP: 0.2097 | MSE: 0.00095
+Step [160/1250] | Loss: 0.4922 | BPP: 0.2168 | MSE: 0.00144
+Step [180/1250] | Loss: 0.4584 | BPP: 0.2125 | MSE: 0.00156
+Step [200/1250] | Loss: 0.6296 | BPP: 0.2309 | MSE: 0.00261
+Step [220/1250] | Loss: 0.4516 | BPP: 0.2054 | MSE: 0.00114
+Step [240/1250] | Loss: 0.4748 | BPP: 0.2106 | MSE: 0.00124
+Step [260/1250] | Loss: 0.4675 | BPP: 0.2159 | MSE: 0.00143
+Step [280/1250] | Loss: 0.4334 | BPP: 0.2095 | MSE: 0.00136
+Step [300/1250] | Loss: 0.4143 | BPP: 0.2030 | MSE: 0.00127
+Step [320/1250] | Loss: 0.4976 | BPP: 0.2168 | MSE: 0.00153
+Step [340/1250] | Loss: 0.3943 | BPP: 0.1994 | MSE: 0.00096
+Step [360/1250] | Loss: 0.5133 | BPP: 0.2166 | MSE: 0.00201
+Step [380/1250] | Loss: 0.4854 | BPP: 0.2110 | MSE: 0.00113
+Step [400/1250] | Loss: 0.4546 | BPP: 0.2057 | MSE: 0.00116
+Step [420/1250] | Loss: 0.3794 | BPP: 0.1901 | MSE: 0.00132
+Step [440/1250] | Loss: 0.3645 | BPP: 0.1896 | MSE: 0.00074
+Step [460/1250] | Loss: 0.4929 | BPP: 0.2182 | MSE: 0.00127
+Step [480/1250] | Loss: 0.4628 | BPP: 0.2162 | MSE: 0.00142
+Step [500/1250] | Loss: 0.5413 | BPP: 0.2125 | MSE: 0.00213
+Step [520/1250] | Loss: 0.5005 | BPP: 0.2223 | MSE: 0.00174
+Step [540/1250] | Loss: 0.6315 | BPP: 0.2550 | MSE: 0.00227
+Step [560/1250] | Loss: 0.3820 | BPP: 0.1960 | MSE: 0.00093
+Step [580/1250] | Loss: 0.3716 | BPP: 0.1962 | MSE: 0.00115
+Step [600/1250] | Loss: 0.3583 | BPP: 0.1968 | MSE: 0.00087
+Step [620/1250] | Loss: 0.4283 | BPP: 0.2025 | MSE: 0.00082
+Step [640/1250] | Loss: 0.4244 | BPP: 0.2061 | MSE: 0.00100
+Step [660/1250] | Loss: 0.4822 | BPP: 0.2143 | MSE: 0.00196
+Step [680/1250] | Loss: 0.4037 | BPP: 0.2008 | MSE: 0.00116
+Step [700/1250] | Loss: 0.4558 | BPP: 0.2054 | MSE: 0.00163
+Step [720/1250] | Loss: 0.4164 | BPP: 0.2070 | MSE: 0.00122
+Step [740/1250] | Loss: 0.4281 | BPP: 0.2127 | MSE: 0.00101
+Step [760/1250] | Loss: 0.5195 | BPP: 0.2200 | MSE: 0.00167
+Step [780/1250] | Loss: 0.4790 | BPP: 0.2134 | MSE: 0.00168
+Step [800/1250] | Loss: 0.4086 | BPP: 0.2043 | MSE: 0.00119
+Step [820/1250] | Loss: 0.4419 | BPP: 0.2166 | MSE: 0.00105
+Step [840/1250] | Loss: 0.3880 | BPP: 0.1986 | MSE: 0.00102
+Step [860/1250] | Loss: 0.3810 | BPP: 0.1956 | MSE: 0.00089
+Step [880/1250] | Loss: 0.4383 | BPP: 0.2073 | MSE: 0.00141
+Step [900/1250] | Loss: 0.4940 | BPP: 0.2227 | MSE: 0.00170
+Step [920/1250] | Loss: 0.4103 | BPP: 0.2034 | MSE: 0.00093
+Step [940/1250] | Loss: 0.3506 | BPP: 0.1882 | MSE: 0.00076
+Step [960/1250] | Loss: 0.4580 | BPP: 0.2145 | MSE: 0.00169
+Step [980/1250] | Loss: 0.3735 | BPP: 0.1967 | MSE: 0.00117
+Step [1000/1250] | Loss: 0.3687 | BPP: 0.1969 | MSE: 0.00098
+Step [1020/1250] | Loss: 0.4381 | BPP: 0.2125 | MSE: 0.00162
+Step [1040/1250] | Loss: 0.4075 | BPP: 0.2009 | MSE: 0.00124
+Step [1060/1250] | Loss: 0.3510 | BPP: 0.1928 | MSE: 0.00086
+Step [1080/1250] | Loss: 0.5662 | BPP: 0.2288 | MSE: 0.00165
+Step [1100/1250] | Loss: 0.5676 | BPP: 0.2177 | MSE: 0.00122
+Step [1120/1250] | Loss: 0.4047 | BPP: 0.2033 | MSE: 0.00130
+Step [1140/1250] | Loss: 0.4247 | BPP: 0.2157 | MSE: 0.00114
+Step [1160/1250] | Loss: 0.3844 | BPP: 0.2052 | MSE: 0.00088
+Step [1180/1250] | Loss: 0.4301 | BPP: 0.2069 | MSE: 0.00151
+Step [1200/1250] | Loss: 0.4282 | BPP: 0.2059 | MSE: 0.00152
+Step [1220/1250] | Loss: 0.4097 | BPP: 0.2014 | MSE: 0.00138
+Step [1240/1250] | Loss: 0.4381 | BPP: 0.2091 | MSE: 0.00138
+Saved: ./checkpoints/student_epoch_18_sub_route_compression_focus.pth
+
+--- Epoch 19 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 0.3481 | BPP: 0.1893 | MSE: 0.00080
+Step [20/1250] | Loss: 0.3767 | BPP: 0.2000 | MSE: 0.00109
+Step [40/1250] | Loss: 0.4689 | BPP: 0.2199 | MSE: 0.00169
+Step [60/1250] | Loss: 0.3623 | BPP: 0.1980 | MSE: 0.00092
+Step [80/1250] | Loss: 0.3534 | BPP: 0.1966 | MSE: 0.00094
+Step [100/1250] | Loss: 0.3668 | BPP: 0.2080 | MSE: 0.00122
+Step [120/1250] | Loss: 0.4326 | BPP: 0.2182 | MSE: 0.00121
+Step [140/1250] | Loss: 0.4692 | BPP: 0.2511 | MSE: 0.00146
+Step [160/1250] | Loss: 0.3996 | BPP: 0.2034 | MSE: 0.00121
+Step [180/1250] | Loss: 0.4574 | BPP: 0.2295 | MSE: 0.00184
+Step [200/1250] | Loss: 0.3819 | BPP: 0.2191 | MSE: 0.00110
+Step [220/1250] | Loss: 0.3567 | BPP: 0.1946 | MSE: 0.00088
+Step [240/1250] | Loss: 0.3319 | BPP: 0.1958 | MSE: 0.00087
+Step [260/1250] | Loss: 0.4176 | BPP: 0.2046 | MSE: 0.00103
+Step [280/1250] | Loss: 0.3691 | BPP: 0.2049 | MSE: 0.00096
+Step [300/1250] | Loss: 0.3306 | BPP: 0.1912 | MSE: 0.00087
+Step [320/1250] | Loss: 0.3796 | BPP: 0.2025 | MSE: 0.00089
+Step [340/1250] | Loss: 0.3863 | BPP: 0.2085 | MSE: 0.00110
+Step [360/1250] | Loss: 0.4566 | BPP: 0.2149 | MSE: 0.00172
+Step [380/1250] | Loss: 0.5461 | BPP: 0.2235 | MSE: 0.00247
+Step [400/1250] | Loss: 0.3441 | BPP: 0.2012 | MSE: 0.00073
+Step [420/1250] | Loss: 0.3436 | BPP: 0.1951 | MSE: 0.00085
+Step [440/1250] | Loss: 0.3249 | BPP: 0.1888 | MSE: 0.00071
+Step [460/1250] | Loss: 0.4220 | BPP: 0.2095 | MSE: 0.00140
+Step [480/1250] | Loss: 0.3418 | BPP: 0.1955 | MSE: 0.00089
+Step [500/1250] | Loss: 0.4206 | BPP: 0.2152 | MSE: 0.00079
+Step [520/1250] | Loss: 0.3999 | BPP: 0.1967 | MSE: 0.00157
+Step [540/1250] | Loss: 0.3484 | BPP: 0.1929 | MSE: 0.00100
+Step [560/1250] | Loss: 0.3371 | BPP: 0.1998 | MSE: 0.00080
+Step [580/1250] | Loss: 0.3598 | BPP: 0.2049 | MSE: 0.00096
+Step [600/1250] | Loss: 0.3899 | BPP: 0.2079 | MSE: 0.00102
+Step [620/1250] | Loss: 0.4470 | BPP: 0.2130 | MSE: 0.00166
+Step [640/1250] | Loss: 0.3438 | BPP: 0.2066 | MSE: 0.00075
+Step [660/1250] | Loss: 0.4117 | BPP: 0.2093 | MSE: 0.00134
+Step [680/1250] | Loss: 0.5205 | BPP: 0.2331 | MSE: 0.00177
+Step [700/1250] | Loss: 0.4278 | BPP: 0.2204 | MSE: 0.00134
+Step [720/1250] | Loss: 0.3355 | BPP: 0.1953 | MSE: 0.00097
+Step [740/1250] | Loss: 0.3130 | BPP: 0.1928 | MSE: 0.00076
+Step [760/1250] | Loss: 0.4249 | BPP: 0.2172 | MSE: 0.00121
+Step [780/1250] | Loss: 0.3396 | BPP: 0.1992 | MSE: 0.00090
+Step [800/1250] | Loss: 0.3139 | BPP: 0.1879 | MSE: 0.00067
+Step [820/1250] | Loss: 0.3989 | BPP: 0.2118 | MSE: 0.00151
+Step [840/1250] | Loss: 0.4612 | BPP: 0.2131 | MSE: 0.00220
+Step [860/1250] | Loss: 0.3505 | BPP: 0.2055 | MSE: 0.00098
+Step [880/1250] | Loss: 0.3572 | BPP: 0.2096 | MSE: 0.00095
+Step [900/1250] | Loss: 0.3685 | BPP: 0.2097 | MSE: 0.00116
+Step [920/1250] | Loss: 0.4126 | BPP: 0.2209 | MSE: 0.00120
+Step [940/1250] | Loss: 0.4569 | BPP: 0.2335 | MSE: 0.00145
+Step [960/1250] | Loss: 0.3642 | BPP: 0.2031 | MSE: 0.00104
+Step [980/1250] | Loss: 0.3138 | BPP: 0.1960 | MSE: 0.00082
+Step [1000/1250] | Loss: 0.3468 | BPP: 0.2001 | MSE: 0.00117
+Step [1020/1250] | Loss: 0.3415 | BPP: 0.2020 | MSE: 0.00093
+Step [1040/1250] | Loss: 0.3379 | BPP: 0.2009 | MSE: 0.00102
+Step [1060/1250] | Loss: 0.3405 | BPP: 0.2031 | MSE: 0.00085
+Step [1080/1250] | Loss: 0.3794 | BPP: 0.2086 | MSE: 0.00125
+Step [1100/1250] | Loss: 0.3614 | BPP: 0.2089 | MSE: 0.00095
+Step [1120/1250] | Loss: 0.3751 | BPP: 0.2042 | MSE: 0.00146
+Step [1140/1250] | Loss: 0.4754 | BPP: 0.2289 | MSE: 0.00190
+Step [1160/1250] | Loss: 0.4963 | BPP: 0.2340 | MSE: 0.00220
+Step [1180/1250] | Loss: 0.3912 | BPP: 0.2086 | MSE: 0.00140
+Step [1200/1250] | Loss: 0.3359 | BPP: 0.1980 | MSE: 0.00113
+Step [1220/1250] | Loss: 0.3864 | BPP: 0.2213 | MSE: 0.00110
+Step [1240/1250] | Loss: 0.2951 | BPP: 0.1864 | MSE: 0.00094
+Saved: ./checkpoints/student_epoch_19_sub_route_compression_focus.pth
+
+--- Epoch 20 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 0.3164 | BPP: 0.1918 | MSE: 0.00111
+Step [20/1250] | Loss: 0.4525 | BPP: 0.2307 | MSE: 0.00183
+Step [40/1250] | Loss: 0.3047 | BPP: 0.1921 | MSE: 0.00099
+Step [60/1250] | Loss: 0.2885 | BPP: 0.1935 | MSE: 0.00068
+Step [80/1250] | Loss: 0.3322 | BPP: 0.1983 | MSE: 0.00114
+Step [100/1250] | Loss: 0.5372 | BPP: 0.2334 | MSE: 0.00283
+Step [120/1250] | Loss: 0.3842 | BPP: 0.2111 | MSE: 0.00138
+Step [140/1250] | Loss: 0.3584 | BPP: 0.2147 | MSE: 0.00108
+Step [160/1250] | Loss: 0.4505 | BPP: 0.2165 | MSE: 0.00202
+Step [180/1250] | Loss: 0.3434 | BPP: 0.2104 | MSE: 0.00104
+Step [200/1250] | Loss: 0.3421 | BPP: 0.2068 | MSE: 0.00107
+Step [220/1250] | Loss: 0.3824 | BPP: 0.2198 | MSE: 0.00121
+Step [240/1250] | Loss: 0.3226 | BPP: 0.2041 | MSE: 0.00095
+Step [260/1250] | Loss: 0.3230 | BPP: 0.1974 | MSE: 0.00109
+Step [280/1250] | Loss: 0.3314 | BPP: 0.1998 | MSE: 0.00109
+Step [300/1250] | Loss: 0.3153 | BPP: 0.1949 | MSE: 0.00104
+Step [320/1250] | Loss: 0.2899 | BPP: 0.1944 | MSE: 0.00079
+Step [340/1250] | Loss: 0.2811 | BPP: 0.1919 | MSE: 0.00069
+Step [360/1250] | Loss: 0.4020 | BPP: 0.2107 | MSE: 0.00176
+Step [380/1250] | Loss: 0.2966 | BPP: 0.1880 | MSE: 0.00108
+Step [400/1250] | Loss: 0.3261 | BPP: 0.1981 | MSE: 0.00113
+Step [420/1250] | Loss: 0.4493 | BPP: 0.2143 | MSE: 0.00256
+Step [440/1250] | Loss: 0.2968 | BPP: 0.1963 | MSE: 0.00084
+Step [460/1250] | Loss: 0.3523 | BPP: 0.2065 | MSE: 0.00133
+Step [480/1250] | Loss: 0.3283 | BPP: 0.2036 | MSE: 0.00106
+Step [500/1250] | Loss: 0.4261 | BPP: 0.2214 | MSE: 0.00193
+Step [520/1250] | Loss: 0.3395 | BPP: 0.2107 | MSE: 0.00110
+Step [540/1250] | Loss: 0.3175 | BPP: 0.2051 | MSE: 0.00099
+Step [560/1250] | Loss: 0.3003 | BPP: 0.1883 | MSE: 0.00103
+Step [580/1250] | Loss: 0.3420 | BPP: 0.2101 | MSE: 0.00122
+Step [600/1250] | Loss: 0.3008 | BPP: 0.1975 | MSE: 0.00092
+Step [620/1250] | Loss: 0.6133 | BPP: 0.2408 | MSE: 0.00382
+Step [640/1250] | Loss: 0.4029 | BPP: 0.2225 | MSE: 0.00168
+Step [660/1250] | Loss: 0.3462 | BPP: 0.2092 | MSE: 0.00120
+Step [680/1250] | Loss: 0.3251 | BPP: 0.2047 | MSE: 0.00108
+Step [700/1250] | Loss: 0.3547 | BPP: 0.1972 | MSE: 0.00161
+Step [720/1250] | Loss: 0.2745 | BPP: 0.1965 | MSE: 0.00061
+Step [740/1250] | Loss: 0.3063 | BPP: 0.2005 | MSE: 0.00094
+Step [760/1250] | Loss: 0.3428 | BPP: 0.2043 | MSE: 0.00128
+Step [780/1250] | Loss: 0.2896 | BPP: 0.1890 | MSE: 0.00094
+Step [800/1250] | Loss: 0.3883 | BPP: 0.2116 | MSE: 0.00175
+Step [820/1250] | Loss: 0.2874 | BPP: 0.1962 | MSE: 0.00080
+Step [840/1250] | Loss: 0.2797 | BPP: 0.1868 | MSE: 0.00089
+Step [860/1250] | Loss: 0.3153 | BPP: 0.1893 | MSE: 0.00125
+Step [880/1250] | Loss: 0.3647 | BPP: 0.2091 | MSE: 0.00152
+Step [900/1250] | Loss: 0.3073 | BPP: 0.1931 | MSE: 0.00115
+Step [920/1250] | Loss: 0.3139 | BPP: 0.1957 | MSE: 0.00114
+Step [940/1250] | Loss: 0.3454 | BPP: 0.2092 | MSE: 0.00123
+Step [960/1250] | Loss: 0.3049 | BPP: 0.1989 | MSE: 0.00098
+Step [980/1250] | Loss: 0.2868 | BPP: 0.1872 | MSE: 0.00096
+Step [1000/1250] | Loss: 0.3636 | BPP: 0.2134 | MSE: 0.00139
+Step [1020/1250] | Loss: 0.2579 | BPP: 0.1808 | MSE: 0.00070
+Step [1040/1250] | Loss: 0.3495 | BPP: 0.1962 | MSE: 0.00159
+Step [1060/1250] | Loss: 0.3451 | BPP: 0.1972 | MSE: 0.00151
+Step [1080/1250] | Loss: 0.3227 | BPP: 0.2037 | MSE: 0.00102
+Step [1100/1250] | Loss: 0.2993 | BPP: 0.1914 | MSE: 0.00112
+Step [1120/1250] | Loss: 0.3049 | BPP: 0.2011 | MSE: 0.00095
+Step [1140/1250] | Loss: 0.2998 | BPP: 0.1902 | MSE: 0.00104
+Step [1160/1250] | Loss: 0.2669 | BPP: 0.1840 | MSE: 0.00083
+Step [1180/1250] | Loss: 0.2641 | BPP: 0.1868 | MSE: 0.00072
+Step [1200/1250] | Loss: 0.3460 | BPP: 0.1992 | MSE: 0.00145
+Step [1220/1250] | Loss: 0.3835 | BPP: 0.2063 | MSE: 0.00175
+Step [1240/1250] | Loss: 0.2867 | BPP: 0.1905 | MSE: 0.00092
+Saved: ./checkpoints/student_epoch_20_sub_route_compression_focus.pth
+
+--- Epoch 21 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 0.2943 | BPP: 0.1913 | MSE: 0.00102
+Step [20/1250] | Loss: 0.3578 | BPP: 0.1997 | MSE: 0.00162
+Step [40/1250] | Loss: 0.2922 | BPP: 0.1886 | MSE: 0.00102
+Step [60/1250] | Loss: 0.3488 | BPP: 0.2079 | MSE: 0.00139
+Step [80/1250] | Loss: 0.2716 | BPP: 0.1879 | MSE: 0.00077
+Step [100/1250] | Loss: 0.2730 | BPP: 0.1875 | MSE: 0.00083
+Step [120/1250] | Loss: 0.3078 | BPP: 0.1925 | MSE: 0.00114
+Step [140/1250] | Loss: 0.3442 | BPP: 0.1927 | MSE: 0.00162
+Step [160/1250] | Loss: 0.3949 | BPP: 0.2022 | MSE: 0.00210
+Step [180/1250] | Loss: 0.2734 | BPP: 0.1838 | MSE: 0.00087
+Step [200/1250] | Loss: 0.3229 | BPP: 0.2030 | MSE: 0.00107
+Step [220/1250] | Loss: 0.2603 | BPP: 0.1859 | MSE: 0.00069
+Step [240/1250] | Loss: 0.3182 | BPP: 0.1865 | MSE: 0.00136
+Step [260/1250] | Loss: 0.3643 | BPP: 0.1980 | MSE: 0.00173
+Step [280/1250] | Loss: 0.3047 | BPP: 0.1932 | MSE: 0.00109
+Step [300/1250] | Loss: 0.2816 | BPP: 0.1823 | MSE: 0.00101
+Step [320/1250] | Loss: 0.2849 | BPP: 0.1929 | MSE: 0.00084
+Step [340/1250] | Loss: 0.3077 | BPP: 0.1955 | MSE: 0.00110
+Step [360/1250] | Loss: 0.2851 | BPP: 0.1936 | MSE: 0.00086
+Step [380/1250] | Loss: 0.2816 | BPP: 0.1839 | MSE: 0.00098
+Step [400/1250] | Loss: 0.3465 | BPP: 0.1971 | MSE: 0.00149
+Step [420/1250] | Loss: 0.2750 | BPP: 0.1911 | MSE: 0.00080
+Step [440/1250] | Loss: 0.2717 | BPP: 0.1888 | MSE: 0.00082
+Step [460/1250] | Loss: 0.2930 | BPP: 0.1847 | MSE: 0.00113
+Step [480/1250] | Loss: 0.2963 | BPP: 0.1979 | MSE: 0.00096
+Step [500/1250] | Loss: 0.3164 | BPP: 0.1912 | MSE: 0.00120
+Step [520/1250] | Loss: 0.2965 | BPP: 0.1864 | MSE: 0.00118
+Step [540/1250] | Loss: 0.3308 | BPP: 0.1970 | MSE: 0.00130
+Step [560/1250] | Loss: 0.2662 | BPP: 0.1840 | MSE: 0.00080
+Step [580/1250] | Loss: 0.2577 | BPP: 0.1807 | MSE: 0.00078
+Step [600/1250] | Loss: 0.2976 | BPP: 0.1848 | MSE: 0.00116
+Step [620/1250] | Loss: 0.2473 | BPP: 0.1760 | MSE: 0.00072
+Step [640/1250] | Loss: 0.2596 | BPP: 0.1827 | MSE: 0.00078
+Step [660/1250] | Loss: 0.2771 | BPP: 0.1832 | MSE: 0.00099
+Step [680/1250] | Loss: 0.3136 | BPP: 0.1818 | MSE: 0.00145
+Step [700/1250] | Loss: 0.2435 | BPP: 0.1718 | MSE: 0.00072
+Step [720/1250] | Loss: 0.3688 | BPP: 0.2010 | MSE: 0.00175
+Step [740/1250] | Loss: 0.2825 | BPP: 0.1879 | MSE: 0.00093
+Step [760/1250] | Loss: 0.2578 | BPP: 0.1828 | MSE: 0.00074
+Step [780/1250] | Loss: 0.2674 | BPP: 0.1821 | MSE: 0.00085
+Step [800/1250] | Loss: 0.3250 | BPP: 0.1867 | MSE: 0.00148
+Step [820/1250] | Loss: 0.2732 | BPP: 0.1757 | MSE: 0.00103
+Step [840/1250] | Loss: 0.2687 | BPP: 0.1791 | MSE: 0.00091
+Step [860/1250] | Loss: 0.2411 | BPP: 0.1727 | MSE: 0.00069
+Step [880/1250] | Loss: 0.3282 | BPP: 0.1914 | MSE: 0.00143
+Step [900/1250] | Loss: 0.3108 | BPP: 0.1891 | MSE: 0.00124
+Step [920/1250] | Loss: 0.3201 | BPP: 0.1884 | MSE: 0.00137
+Step [940/1250] | Loss: 0.2864 | BPP: 0.1814 | MSE: 0.00105
+Step [960/1250] | Loss: 0.2623 | BPP: 0.1807 | MSE: 0.00075
+Step [980/1250] | Loss: 0.2600 | BPP: 0.1783 | MSE: 0.00080
+Step [1000/1250] | Loss: 0.3106 | BPP: 0.1898 | MSE: 0.00125
+Step [1020/1250] | Loss: 0.2841 | BPP: 0.1878 | MSE: 0.00098
+Step [1040/1250] | Loss: 0.3393 | BPP: 0.1904 | MSE: 0.00165
+Step [1060/1250] | Loss: 0.2867 | BPP: 0.1905 | MSE: 0.00095
+Step [1080/1250] | Loss: 0.2741 | BPP: 0.1862 | MSE: 0.00085
+Step [1100/1250] | Loss: 0.3089 | BPP: 0.1923 | MSE: 0.00116
+Step [1120/1250] | Loss: 0.3550 | BPP: 0.1921 | MSE: 0.00169
+Step [1140/1250] | Loss: 0.2820 | BPP: 0.1832 | MSE: 0.00097
+Step [1160/1250] | Loss: 0.3289 | BPP: 0.1893 | MSE: 0.00153
+Step [1180/1250] | Loss: 0.3244 | BPP: 0.1940 | MSE: 0.00132
+Step [1200/1250] | Loss: 0.2920 | BPP: 0.1847 | MSE: 0.00117
+Step [1220/1250] | Loss: 0.3650 | BPP: 0.1940 | MSE: 0.00192
+Step [1240/1250] | Loss: 0.2925 | BPP: 0.1871 | MSE: 0.00107
+Saved: ./checkpoints/student_epoch_21_sub_route_compression_focus.pth
+
+--- Epoch 22 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 0.3709 | BPP: 0.2089 | MSE: 0.00161
+Step [20/1250] | Loss: 0.2554 | BPP: 0.1795 | MSE: 0.00075
+Step [40/1250] | Loss: 0.3827 | BPP: 0.2027 | MSE: 0.00186
+Step [60/1250] | Loss: 0.2498 | BPP: 0.1751 | MSE: 0.00073
+Step [80/1250] | Loss: 0.2590 | BPP: 0.1781 | MSE: 0.00084
+Step [100/1250] | Loss: 0.2839 | BPP: 0.1783 | MSE: 0.00114
+Step [120/1250] | Loss: 0.3200 | BPP: 0.1842 | MSE: 0.00158
+Step [140/1250] | Loss: 0.2682 | BPP: 0.1933 | MSE: 0.00076
+Step [160/1250] | Loss: 0.3717 | BPP: 0.2154 | MSE: 0.00170
+Step [180/1250] | Loss: 0.2988 | BPP: 0.1912 | MSE: 0.00109
+Step [200/1250] | Loss: 0.2555 | BPP: 0.1799 | MSE: 0.00077
+Step [220/1250] | Loss: 0.2587 | BPP: 0.1808 | MSE: 0.00078
+Step [240/1250] | Loss: 0.2683 | BPP: 0.1782 | MSE: 0.00095
+Step [260/1250] | Loss: 0.2421 | BPP: 0.1734 | MSE: 0.00070
+Step [280/1250] | Loss: 0.2993 | BPP: 0.1849 | MSE: 0.00122
+Step [300/1250] | Loss: 0.2765 | BPP: 0.1806 | MSE: 0.00100
+Step [320/1250] | Loss: 0.2310 | BPP: 0.1669 | MSE: 0.00066
+Step [340/1250] | Loss: 0.2895 | BPP: 0.1791 | MSE: 0.00118
+Step [360/1250] | Loss: 0.2573 | BPP: 0.1753 | MSE: 0.00085
+Step [380/1250] | Loss: 0.2380 | BPP: 0.1737 | MSE: 0.00063
+Step [400/1250] | Loss: 0.3985 | BPP: 0.1941 | MSE: 0.00230
+Step [420/1250] | Loss: 0.3724 | BPP: 0.1876 | MSE: 0.00210
+Step [440/1250] | Loss: 0.2563 | BPP: 0.1745 | MSE: 0.00089
+Step [460/1250] | Loss: 0.2936 | BPP: 0.1757 | MSE: 0.00131
+Step [480/1250] | Loss: 0.2534 | BPP: 0.1725 | MSE: 0.00084
+Step [500/1250] | Loss: 0.2774 | BPP: 0.1834 | MSE: 0.00094
+Step [520/1250] | Loss: 0.2426 | BPP: 0.1714 | MSE: 0.00074
+Step [540/1250] | Loss: 0.2880 | BPP: 0.1818 | MSE: 0.00107
+Step [560/1250] | Loss: 0.2817 | BPP: 0.1811 | MSE: 0.00101
+Step [580/1250] | Loss: 0.3047 | BPP: 0.1863 | MSE: 0.00121
+Step [600/1250] | Loss: 0.2354 | BPP: 0.1759 | MSE: 0.00059
+Step [620/1250] | Loss: 0.3021 | BPP: 0.1753 | MSE: 0.00136
+Step [640/1250] | Loss: 0.2405 | BPP: 0.1751 | MSE: 0.00065
+Step [660/1250] | Loss: 0.2558 | BPP: 0.1718 | MSE: 0.00088
+Step [680/1250] | Loss: 0.3268 | BPP: 0.1916 | MSE: 0.00141
+Step [700/1250] | Loss: 0.2351 | BPP: 0.1739 | MSE: 0.00062
+Step [720/1250] | Loss: 0.2674 | BPP: 0.1743 | MSE: 0.00099
+Step [740/1250] | Loss: 0.3043 | BPP: 0.1828 | MSE: 0.00129
+Step [760/1250] | Loss: 0.3069 | BPP: 0.1868 | MSE: 0.00124
+Step [780/1250] | Loss: 0.3210 | BPP: 0.1828 | MSE: 0.00152
+Step [800/1250] | Loss: 0.2442 | BPP: 0.1762 | MSE: 0.00068
+Step [820/1250] | Loss: 0.2835 | BPP: 0.1772 | MSE: 0.00113
+Step [840/1250] | Loss: 0.3318 | BPP: 0.1914 | MSE: 0.00148
+Step [860/1250] | Loss: 0.3594 | BPP: 0.1870 | MSE: 0.00197
+Step [880/1250] | Loss: 0.2613 | BPP: 0.1714 | MSE: 0.00095
+Step [900/1250] | Loss: 0.3579 | BPP: 0.1928 | MSE: 0.00182
+Step [920/1250] | Loss: 0.2483 | BPP: 0.1725 | MSE: 0.00078
+Step [940/1250] | Loss: 0.3006 | BPP: 0.1812 | MSE: 0.00126
+Step [960/1250] | Loss: 0.2449 | BPP: 0.1673 | MSE: 0.00084
+Step [980/1250] | Loss: 0.2658 | BPP: 0.1732 | MSE: 0.00095
+Step [1000/1250] | Loss: 0.2906 | BPP: 0.1854 | MSE: 0.00105
+Step [1020/1250] | Loss: 0.2578 | BPP: 0.1725 | MSE: 0.00093
+Step [1040/1250] | Loss: 0.2631 | BPP: 0.1771 | MSE: 0.00091
+Step [1060/1250] | Loss: 0.2956 | BPP: 0.1778 | MSE: 0.00133
+Step [1080/1250] | Loss: 0.2791 | BPP: 0.1813 | MSE: 0.00104
+Step [1100/1250] | Loss: 0.2606 | BPP: 0.1719 | MSE: 0.00097
+Step [1120/1250] | Loss: 0.2257 | BPP: 0.1676 | MSE: 0.00060
+Step [1140/1250] | Loss: 0.2577 | BPP: 0.1739 | MSE: 0.00089
+Step [1160/1250] | Loss: 0.2628 | BPP: 0.1734 | MSE: 0.00094
+Step [1180/1250] | Loss: 0.2737 | BPP: 0.1697 | MSE: 0.00115
+Step [1200/1250] | Loss: 0.2802 | BPP: 0.1792 | MSE: 0.00098
+Step [1220/1250] | Loss: 0.2344 | BPP: 0.1658 | MSE: 0.00073
+Step [1240/1250] | Loss: 0.2827 | BPP: 0.1753 | MSE: 0.00117
+Saved: ./checkpoints/student_epoch_22_sub_route_compression_focus.pth
+
+--- Epoch 23 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 0.2160 | BPP: 0.1607 | MSE: 0.00058
+Step [20/1250] | Loss: 0.2916 | BPP: 0.1739 | MSE: 0.00135
+Step [40/1250] | Loss: 0.3161 | BPP: 0.1818 | MSE: 0.00143
+Step [60/1250] | Loss: 0.2482 | BPP: 0.1677 | MSE: 0.00087
+Step [80/1250] | Loss: 0.2527 | BPP: 0.1752 | MSE: 0.00081
+Step [100/1250] | Loss: 0.2835 | BPP: 0.1682 | MSE: 0.00127
+Step [120/1250] | Loss: 0.2312 | BPP: 0.1637 | MSE: 0.00067
+Step [140/1250] | Loss: 0.2555 | BPP: 0.1686 | MSE: 0.00093
+Step [160/1250] | Loss: 0.2648 | BPP: 0.1649 | MSE: 0.00113
+Step [180/1250] | Loss: 0.2974 | BPP: 0.1785 | MSE: 0.00130
+Step [200/1250] | Loss: 0.2769 | BPP: 0.1718 | MSE: 0.00112
+Step [220/1250] | Loss: 0.2332 | BPP: 0.1693 | MSE: 0.00064
+Step [240/1250] | Loss: 0.2191 | BPP: 0.1603 | MSE: 0.00064
+Step [260/1250] | Loss: 0.2517 | BPP: 0.1652 | MSE: 0.00093
+Step [280/1250] | Loss: 0.2463 | BPP: 0.1658 | MSE: 0.00087
+Step [300/1250] | Loss: 0.2792 | BPP: 0.1738 | MSE: 0.00115
+Step [320/1250] | Loss: 0.2451 | BPP: 0.1618 | MSE: 0.00091
+Step [340/1250] | Loss: 0.2675 | BPP: 0.1715 | MSE: 0.00105
+Step [360/1250] | Loss: 0.3146 | BPP: 0.1835 | MSE: 0.00141
+Step [380/1250] | Loss: 0.2862 | BPP: 0.1748 | MSE: 0.00120
+Step [400/1250] | Loss: 0.2851 | BPP: 0.1693 | MSE: 0.00127
+Step [420/1250] | Loss: 0.3742 | BPP: 0.1846 | MSE: 0.00214
+Step [440/1250] | Loss: 0.2466 | BPP: 0.1702 | MSE: 0.00082
+Step [460/1250] | Loss: 0.2198 | BPP: 0.1579 | MSE: 0.00066
+Step [480/1250] | Loss: 0.3016 | BPP: 0.1804 | MSE: 0.00129
+Step [500/1250] | Loss: 0.2789 | BPP: 0.1650 | MSE: 0.00128
+Step [520/1250] | Loss: 0.2331 | BPP: 0.1634 | MSE: 0.00075
+Step [540/1250] | Loss: 0.2763 | BPP: 0.1615 | MSE: 0.00130
+Step [560/1250] | Loss: 0.2609 | BPP: 0.1652 | MSE: 0.00103
+Step [580/1250] | Loss: 0.2832 | BPP: 0.1663 | MSE: 0.00130
+Step [600/1250] | Loss: 0.2397 | BPP: 0.1668 | MSE: 0.00075
+Step [620/1250] | Loss: 0.2853 | BPP: 0.1866 | MSE: 0.00109
+Step [640/1250] | Loss: 0.2753 | BPP: 0.1792 | MSE: 0.00104
+Step [660/1250] | Loss: 0.2751 | BPP: 0.1726 | MSE: 0.00111
+Step [680/1250] | Loss: 0.2542 | BPP: 0.1693 | MSE: 0.00088
+Step [700/1250] | Loss: 0.2642 | BPP: 0.1679 | MSE: 0.00105
+Step [720/1250] | Loss: 0.2991 | BPP: 0.1788 | MSE: 0.00131
+Step [740/1250] | Loss: 0.2551 | BPP: 0.1663 | MSE: 0.00099
+Step [760/1250] | Loss: 0.2239 | BPP: 0.1597 | MSE: 0.00070
+Step [780/1250] | Loss: 0.2427 | BPP: 0.1616 | MSE: 0.00088
+Step [800/1250] | Loss: 0.2249 | BPP: 0.1610 | MSE: 0.00069
+Step [820/1250] | Loss: 0.2309 | BPP: 0.1545 | MSE: 0.00087
+Step [840/1250] | Loss: 0.2287 | BPP: 0.1569 | MSE: 0.00080
+Step [860/1250] | Loss: 0.2365 | BPP: 0.1631 | MSE: 0.00077
+Step [880/1250] | Loss: 0.2230 | BPP: 0.1584 | MSE: 0.00070
+Step [900/1250] | Loss: 0.2600 | BPP: 0.1709 | MSE: 0.00090
+Step [920/1250] | Loss: 0.2494 | BPP: 0.1607 | MSE: 0.00099
+Step [940/1250] | Loss: 0.3086 | BPP: 0.1722 | MSE: 0.00156
+Step [960/1250] | Loss: 0.2575 | BPP: 0.1701 | MSE: 0.00093
+Step [980/1250] | Loss: 0.2804 | BPP: 0.1693 | MSE: 0.00122
+Step [1000/1250] | Loss: 0.2241 | BPP: 0.1615 | MSE: 0.00067
+Step [1020/1250] | Loss: 0.3047 | BPP: 0.1809 | MSE: 0.00139
+Step [1040/1250] | Loss: 0.2575 | BPP: 0.1670 | MSE: 0.00099
+Step [1060/1250] | Loss: 0.2451 | BPP: 0.1652 | MSE: 0.00088
+Step [1080/1250] | Loss: 0.2824 | BPP: 0.1663 | MSE: 0.00131
+Step [1100/1250] | Loss: 0.2448 | BPP: 0.1631 | MSE: 0.00093
+Step [1120/1250] | Loss: 0.2284 | BPP: 0.1566 | MSE: 0.00080
+Step [1140/1250] | Loss: 0.3074 | BPP: 0.1779 | MSE: 0.00144
+Step [1160/1250] | Loss: 0.3169 | BPP: 0.1649 | MSE: 0.00173
+Step [1180/1250] | Loss: 0.2929 | BPP: 0.1763 | MSE: 0.00128
+Step [1200/1250] | Loss: 0.3085 | BPP: 0.1664 | MSE: 0.00165
+Step [1220/1250] | Loss: 0.3272 | BPP: 0.1721 | MSE: 0.00180
+Step [1240/1250] | Loss: 0.2168 | BPP: 0.1545 | MSE: 0.00070
+Saved: ./checkpoints/student_epoch_23_sub_route_compression_focus.pth
+
+--- Epoch 24 | Focus: Compression Ratio (BPP) ---
+Step [0/1250] | Loss: 0.3020 | BPP: 0.1783 | MSE: 0.00138
+Step [20/1250] | Loss: 0.2627 | BPP: 0.1688 | MSE: 0.00104
+Step [40/1250] | Loss: 0.2783 | BPP: 0.1638 | MSE: 0.00131
+Step [60/1250] | Loss: 0.2326 | BPP: 0.1637 | MSE: 0.00077
+Step [80/1250] | Loss: 0.2859 | BPP: 0.1690 | MSE: 0.00131
+Step [100/1250] | Loss: 0.2566 | BPP: 0.1650 | MSE: 0.00104
+Step [120/1250] | Loss: 0.2448 | BPP: 0.1581 | MSE: 0.00100
+Step [140/1250] | Loss: 0.3661 | BPP: 0.1708 | MSE: 0.00225
+Step [160/1250] | Loss: 0.2048 | BPP: 0.1509 | MSE: 0.00060
+Step [180/1250] | Loss: 0.2159 | BPP: 0.1531 | MSE: 0.00070
+Step [200/1250] | Loss: 0.2184 | BPP: 0.1553 | MSE: 0.00069
+Step [220/1250] | Loss: 0.2367 | BPP: 0.1591 | MSE: 0.00081
+Step [240/1250] | Loss: 0.3110 | BPP: 0.1724 | MSE: 0.00154
+Step [260/1250] | Loss: 0.3471 | BPP: 0.1827 | MSE: 0.00184
+Step [280/1250] | Loss: 0.2439 | BPP: 0.1603 | MSE: 0.00093
+Step [300/1250] | Loss: 0.2445 | BPP: 0.1622 | MSE: 0.00091
+Step [320/1250] | Loss: 0.2238 | BPP: 0.1509 | MSE: 0.00082
+Step [340/1250] | Loss: 0.2145 | BPP: 0.1532 | MSE: 0.00068
+Step [360/1250] | Loss: 0.2380 | BPP: 0.1576 | MSE: 0.00091
+Step [380/1250] | Loss: 0.3909 | BPP: 0.1683 | MSE: 0.00267
+Step [400/1250] | Loss: 0.2308 | BPP: 0.1539 | MSE: 0.00086
+Step [420/1250] | Loss: 0.2149 | BPP: 0.1555 | MSE: 0.00065
+Step [440/1250] | Loss: 0.2587 | BPP: 0.1579 | MSE: 0.00114
+Step [460/1250] | Loss: 0.3967 | BPP: 0.1732 | MSE: 0.00270
+Step [480/1250] | Loss: 0.2593 | BPP: 0.1594 | MSE: 0.00115
+Step [500/1250] | Loss: 0.2864 | BPP: 0.1681 | MSE: 0.00136
+Step [520/1250] | Loss: 0.2966 | BPP: 0.1708 | MSE: 0.00146
+Step [540/1250] | Loss: 0.2493 | BPP: 0.1653 | MSE: 0.00095
+Step [560/1250] | Loss: 0.2136 | BPP: 0.1599 | MSE: 0.00059
+Step [580/1250] | Loss: 0.3156 | BPP: 0.1702 | MSE: 0.00170
+Step [600/1250] | Loss: 0.2047 | BPP: 0.1546 | MSE: 0.00053
+Step [620/1250] | Loss: 0.2206 | BPP: 0.1515 | MSE: 0.00077
+Step [640/1250] | Loss: 0.2729 | BPP: 0.1612 | MSE: 0.00129
+Step [660/1250] | Loss: 0.2882 | BPP: 0.1658 | MSE: 0.00140
+Step [680/1250] | Loss: 0.2435 | BPP: 0.1584 | MSE: 0.00096
+Step [700/1250] | Loss: 0.2586 | BPP: 0.1646 | MSE: 0.00108
+Step [720/1250] | Loss: 0.2296 | BPP: 0.1564 | MSE: 0.00083
+Step [740/1250] | Loss: 0.2303 | BPP: 0.1540 | MSE: 0.00089
+Step [760/1250] | Loss: 0.2555 | BPP: 0.1621 | MSE: 0.00105
+Step [780/1250] | Loss: 0.2240 | BPP: 0.1533 | MSE: 0.00081
+Step [800/1250] | Loss: 0.2238 | BPP: 0.1564 | MSE: 0.00077
+Step [820/1250] | Loss: 0.2618 | BPP: 0.1617 | MSE: 0.00119
+Step [840/1250] | Loss: 0.2336 | BPP: 0.1577 | MSE: 0.00084
+Step [860/1250] | Loss: 0.2179 | BPP: 0.1602 | MSE: 0.00062
+Step [880/1250] | Loss: 0.2386 | BPP: 0.1591 | MSE: 0.00088
+Step [900/1250] | Loss: 0.2452 | BPP: 0.1576 | MSE: 0.00097
+Step [920/1250] | Loss: 0.2232 | BPP: 0.1473 | MSE: 0.00089
+Step [940/1250] | Loss: 0.2249 | BPP: 0.1581 | MSE: 0.00067
+Step [960/1250] | Loss: 0.3141 | BPP: 0.1739 | MSE: 0.00161
+Step [980/1250] | Loss: 0.2590 | BPP: 0.1649 | MSE: 0.00104
+Step [1000/1250] | Loss: 0.2117 | BPP: 0.1477 | MSE: 0.00073
+Step [1020/1250] | Loss: 0.2486 | BPP: 0.1625 | MSE: 0.00092
+Step [1040/1250] | Loss: 0.1927 | BPP: 0.1488 | MSE: 0.00050
+Step [1060/1250] | Loss: 0.3092 | BPP: 0.1754 | MSE: 0.00150
+Step [1080/1250] | Loss: 0.2565 | BPP: 0.1599 | MSE: 0.00115
+Step [1100/1250] | Loss: 0.1839 | BPP: 0.1454 | MSE: 0.00044
+Step [1120/1250] | Loss: 0.2355 | BPP: 0.1534 | MSE: 0.00094
+Step [1140/1250] | Loss: 0.2359 | BPP: 0.1603 | MSE: 0.00085
+Step [1160/1250] | Loss: 0.2443 | BPP: 0.1559 | MSE: 0.00102
+Step [1180/1250] | Loss: 0.2282 | BPP: 0.1588 | MSE: 0.00079
+Step [1200/1250] | Loss: 0.2351 | BPP: 0.1567 | MSE: 0.00088
+Step [1220/1250] | Loss: 0.2474 | BPP: 0.1610 | MSE: 0.00096
+Step [1240/1250] | Loss: 0.2797 | BPP: 0.1611 | MSE: 0.00139
+Saved: ./checkpoints/student_epoch_24_sub_route_compression_focus.pth

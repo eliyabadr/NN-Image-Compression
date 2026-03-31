@@ -1,0 +1,185 @@
+Requirement already satisfied: compressai in /home/egb11/.local/lib/python3.10/site-packages (1.2.8)
+Requirement already satisfied: einops in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (0.8.2)
+Requirement already satisfied: matplotlib in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (3.7.2)
+Requirement already satisfied: numpy<2.0,>=1.21.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (1.24.3)
+Requirement already satisfied: pandas in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (2.0.3)
+Requirement already satisfied: pybind11>=2.6.0 in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (3.0.2)
+Requirement already satisfied: pytorch-msssim in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (1.0.0)
+Requirement already satisfied: scipy in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (1.11.1)
+Requirement already satisfied: setuptools>=68 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (68.0.0)
+Requirement already satisfied: tomli>=2.2.1 in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (2.4.0)
+Requirement already satisfied: torch-geometric>=2.3.0 in /home/egb11/.local/lib/python3.10/site-packages (from compressai) (2.7.0)
+Requirement already satisfied: torch>=1.13.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (2.1.2)
+Requirement already satisfied: torchvision in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (0.16.2)
+Requirement already satisfied: tqdm in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (4.65.0)
+Requirement already satisfied: typing-extensions>=4.0.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (4.15.0)
+Requirement already satisfied: wheel>=0.32.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from compressai) (0.38.4)
+Requirement already satisfied: filelock in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (3.9.0)
+Requirement already satisfied: sympy in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (1.11.1)
+Requirement already satisfied: networkx in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (3.1)
+Requirement already satisfied: jinja2 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (3.1.2)
+Requirement already satisfied: fsspec in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch>=1.13.1->compressai) (2025.3.0)
+Requirement already satisfied: aiohttp in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (3.8.5)
+Requirement already satisfied: psutil>=5.8.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (5.9.0)
+Requirement already satisfied: pyparsing in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (3.0.9)
+Requirement already satisfied: requests in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (2.31.0)
+Requirement already satisfied: xxhash in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from torch-geometric>=2.3.0->compressai) (2.0.2)
+Requirement already satisfied: attrs>=17.3.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (22.1.0)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (2.0.4)
+Requirement already satisfied: multidict<7.0,>=4.5 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (6.0.2)
+Requirement already satisfied: async-timeout<5.0,>=4.0.0a3 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (4.0.2)
+Requirement already satisfied: yarl<2.0,>=1.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (1.8.1)
+Requirement already satisfied: frozenlist>=1.1.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (1.3.3)
+Requirement already satisfied: aiosignal>=1.1.2 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from aiohttp->torch-geometric>=2.3.0->compressai) (1.2.0)
+Requirement already satisfied: idna>=2.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from yarl<2.0,>=1.0->aiohttp->torch-geometric>=2.3.0->compressai) (3.4)
+Requirement already satisfied: MarkupSafe>=2.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from jinja2->torch>=1.13.1->compressai) (2.1.1)
+Requirement already satisfied: contourpy>=1.0.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (1.0.5)
+Requirement already satisfied: cycler>=0.10 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (0.11.0)
+Requirement already satisfied: fonttools>=4.22.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (4.25.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (1.4.4)
+Requirement already satisfied: packaging>=20.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (23.1)
+Requirement already satisfied: pillow>=6.2.0 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (9.4.0)
+Requirement already satisfied: python-dateutil>=2.7 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from matplotlib->compressai) (2.8.2)
+Requirement already satisfied: six>=1.5 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib->compressai) (1.16.0)
+Requirement already satisfied: pytz>=2020.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from pandas->compressai) (2023.3.post1)
+Requirement already satisfied: tzdata>=2022.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from pandas->compressai) (2023.3)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from requests->torch-geometric>=2.3.0->compressai) (1.26.16)
+Requirement already satisfied: certifi>=2017.4.17 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from requests->torch-geometric>=2.3.0->compressai) (2023.11.17)
+Requirement already satisfied: mpmath>=0.19 in /apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages (from sympy->torch>=1.13.1->compressai) (1.3.0)
+
+[notice] A new release of pip is available: 25.1.1 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+/apps/sw/miniconda/envs/ai-4/lib/python3.10/site-packages/torch/__config__.py:9: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 11040). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /opt/conda/conda-bld/pytorch_1702400410390/work/c10/cuda/CUDAFunctions.cpp:108.)
+  return torch._C._show_config()
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 20
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 1262.2     | 31.55    | 3885.4  
+===============================================================================================
+AVG PSNR (Model vs Original): 31.55 dB
+SIZE RATIO (AVIF/Model):      0.42:1
+AVG ENCODE: 3885.4 ms | AVG DECODE: 5398.2 ms
+Images saved to: reconstructed_results/epoch_20
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 21
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 1043.2     | 31.82    | 3656.6  
+===============================================================================================
+AVG PSNR (Model vs Original): 31.82 dB
+SIZE RATIO (AVIF/Model):      0.51:1
+AVG ENCODE: 3656.6 ms | AVG DECODE: 6117.6 ms
+Images saved to: reconstructed_results/epoch_21
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 22
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 548.0      | 32.19    | 3658.7  
+===============================================================================================
+AVG PSNR (Model vs Original): 32.19 dB
+SIZE RATIO (AVIF/Model):      0.97:1
+AVG ENCODE: 3658.7 ms | AVG DECODE: 5325.6 ms
+Images saved to: reconstructed_results/epoch_22
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 23
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 202.0      | 32.54    | 3730.6  
+===============================================================================================
+AVG PSNR (Model vs Original): 32.54 dB
+SIZE RATIO (AVIF/Model):      2.63:1
+AVG ENCODE: 3730.6 ms | AVG DECODE: 5348.5 ms
+Images saved to: reconstructed_results/epoch_23
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 24
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 197.8      | 32.51    | 3704.6  
+===============================================================================================
+AVG PSNR (Model vs Original): 32.51 dB
+SIZE RATIO (AVIF/Model):      2.68:1
+AVG ENCODE: 3704.6 ms | AVG DECODE: 5332.7 ms
+Images saved to: reconstructed_results/epoch_24
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 25
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 172.2      | 32.95    | 3697.5  
+===============================================================================================
+AVG PSNR (Model vs Original): 32.95 dB
+SIZE RATIO (AVIF/Model):      3.08:1
+AVG ENCODE: 3697.5 ms | AVG DECODE: 5294.5 ms
+Images saved to: reconstructed_results/epoch_25
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 26
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 144.3      | 33.13    | 3663.4  
+===============================================================================================
+AVG PSNR (Model vs Original): 33.13 dB
+SIZE RATIO (AVIF/Model):      3.68:1
+AVG ENCODE: 3663.4 ms | AVG DECODE: 5318.6 ms
+Images saved to: reconstructed_results/epoch_26
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 27
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 138.7      | 33.19    | 4012.8  
+===============================================================================================
+AVG PSNR (Model vs Original): 33.19 dB
+SIZE RATIO (AVIF/Model):      3.82:1
+AVG ENCODE: 4012.8 ms | AVG DECODE: 5337.4 ms
+Images saved to: reconstructed_results/epoch_27
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 28
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 133.5      | 32.82    | 4412.0  
+===============================================================================================
+AVG PSNR (Model vs Original): 32.82 dB
+SIZE RATIO (AVIF/Model):      3.97:1
+AVG ENCODE: 4412.0 ms | AVG DECODE: 5323.8 ms
+Images saved to: reconstructed_results/epoch_28
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 29
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 127.3      | 33.34    | 3659.4  
+===============================================================================================
+AVG PSNR (Model vs Original): 33.34 dB
+SIZE RATIO (AVIF/Model):      4.17:1
+AVG ENCODE: 3659.4 ms | AVG DECODE: 5464.3 ms
+Images saved to: reconstructed_results/epoch_29
+Benchmarking on: cpu
+
+===============================================================================================
+RESULTS FOR EPOCH 30
+Filename        | AVIF(KB)   | A-PSNR   | Model(KB)  | M-PSNR   | Enc(ms) 
+-----------------------------------------------------------------------------------------------
+photo_24.jpg    | 530.6      | 40.37    | 119.8      | 32.76    | 3660.5  
+===============================================================================================
+AVG PSNR (Model vs Original): 32.76 dB
+SIZE RATIO (AVIF/Model):      4.43:1
+AVG ENCODE: 3660.5 ms | AVG DECODE: 5639.4 ms
+Images saved to: reconstructed_results/epoch_30
